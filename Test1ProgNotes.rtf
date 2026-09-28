@@ -1,0 +1,524 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2870
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Bold;\f1\froman\fcharset0 Times-Roman;\f2\fmodern\fcharset0 Courier;
+\f3\fmodern\fcharset0 Courier-Bold;\f4\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;\red179\green179\blue179;
+}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c0\c0\c0\c84706;\cssrgb\c75294\c75294\c75294;
+}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc0\levelnfcn0\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{decimal\}}{\leveltext\leveltemplateid101\'01\'00;}{\levelnumbers\'01;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}
+{\list\listtemplateid4\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid301\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid4}
+{\list\listtemplateid5\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat0\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid401\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid5}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}{\listoverride\listid4\listoverridecount0\ls4}{\listoverride\listid5\listoverridecount0\ls5}}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\sa321\partightenfactor0
+
+\f0\b\fs48 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 PROG6112 (Programming 1B) Master Syllabus & Exam Study Guide\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\fs36 \cf0 SECTION 1: CORE CONCEPTS & CHEAT SHEET\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\fs28 \cf0 1. The Scanner Buffer Trap\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 When reading numbers followed by 
+\f2\fs26 String
+\f1\fs24  input:\
+\pard\pardeftab720\partightenfactor0
+\cf0 Java\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 int age = scanner.nextInt();\
+scanner.nextLine(); // CONSUME THE NEWLINE BUFFER!\
+String name = scanner.nextLine();\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 2. String Parsing (Crucial for GUIs & File I/O)\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0\fs24 \cf0 Java\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 // Convert String to Number\
+int age = Integer.parseInt("25");\
+double price = Double.parseDouble("49.99");\
+\
+// Convert Number to String\
+String str = String.valueOf(price);\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 3. Key String Methods\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0\fs24 \cf0 Java\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 str.equals("SUV");               // Exact match (NEVER use == for Strings!)\
+str.equalsIgnoreCase("suv");     // Case-insensitive match\
+str.trim();                       // Removes leading/trailing spaces\
+str.substring(0, 3);              // Extracts characters from index 0 up to 3\
+str.toUpperCase();                // Converts to uppercase\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 4. Integer Division Bug (Average Calculations)\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0\fs24 \cf0 Java\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 int total = 2200;\
+int count = 6;\
+\
+// WRONG: Truncates decimal values (gives 366.0 instead of 366.67)\
+double avg = total / count; \
+\
+// CORRECT: Cast one operand to double\
+double avg = (double) total / count; \
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 5. Formatting Output (
+\f3\fs30\fsmilli15210 printf
+\f0\fs28  / 
+\f3\fs30\fsmilli15210 String.format
+\f0\fs28 )\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls1\ilvl0
+\f2\b0\fs26 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 %-15s
+\f1\fs24  : Left-aligned string (15 width)\
+\ls1\ilvl0
+\f2\fs26 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 %8d
+\f1\fs24  : Right-aligned integer (8 width)\
+\ls1\ilvl0
+\f2\fs26 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 %.2f
+\f1\fs24  : Floating-point number formatted to 2 decimal places\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 SECTION 2: FULL WORKED EXAM QUESTION (QUESTION 2 PAPER TEMPLATE)\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 Below is a complete implementation based on the standard exam format for 
+\f0\b Inheritance, Abstract Classes, Interfaces, and Driver Classes
+\f1\b0 .\
+\pard\pardeftab720\qc\partightenfactor0
+
+\f4\fs22 \cf3 \cb4 \strokec3 PDF\cb1 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\fs24 \cf0 \strokec2 \
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 Question Requirements\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls2\ilvl0
+\f1\b0\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	1	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Interface 
+\f2\fs26 iTickets
+\f1\fs24  with method 
+\f2\fs26 print_tickets()
+\f1\fs24 .\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	2	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Abstract Class 
+\f2\fs26 Tickets
+\f1\fs24  storing fields, constructor, and getters.\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	3	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Subclass 
+\f2\fs26 TicketSales
+\f1\fs24  implementing discount logic (10% discount if age \uc0\u8805 65).\
+\ls2\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	4	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Driver class 
+\f2\fs26 Movie_Tickets
+\f1\fs24  collecting user input via 
+\f2\fs26 Scanner
+\f1\fs24 .\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 Code Implementation\
+\pard\pardeftab720\sa319\partightenfactor0
+
+\fs24 \cf0 1. 
+\f3\fs26 iTickets.java
+\f0\fs24 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0 \cf0 Java\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 public interface iTickets \{\
+    public void print_tickets();\
+\}\
+\pard\pardeftab720\sa319\partightenfactor0
+
+\f0\b\fs24 \cf0 2. 
+\f3\fs26 Tickets.java
+\f0\fs24 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0 \cf0 Java\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 public abstract class Tickets implements iTickets \{\
+    private String customerName;\
+    private String movieTitle;\
+    private int customerAge;\
+    private double moviePrice;\
+\
+    // Constructor\
+    public Tickets(String customerName, String movieTitle, int customerAge, double moviePrice) \{\
+        this.customerName = customerName;\
+        this.movieTitle = movieTitle;\
+        this.customerAge = customerAge;\
+        this.moviePrice = moviePrice;\
+    \}\
+\
+    // Getters (Used by Subclass due to private access)\
+    public String getCustomerName() \{\
+        return customerName;\
+    \}\
+\
+    public String getMovieTitle() \{\
+        return movieTitle;\
+    \}\
+\
+    public int getCustomerAge() \{\
+        return customerAge;\
+    \}\
+\
+    public double getMoviePrice() \{\
+        return moviePrice;\
+    \}\
+\}\
+\pard\pardeftab720\sa319\partightenfactor0
+
+\f0\b\fs24 \cf0 3. 
+\f3\fs26 TicketSales.java
+\f0\fs24 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0 \cf0 Java\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 public class TicketSales extends Tickets \{\
+\
+    public TicketSales(String customerName, String movieTitle, int customerAge, double moviePrice) \{\
+        super(customerName, movieTitle, customerAge, moviePrice);\
+    \}\
+\
+    @Override\
+    public void print_tickets() \{\
+        double discount = 0.0;\
+\
+        // Apply 10% discount if customer age is 65 or older\
+        if (getCustomerAge() >= 65) \{\
+            discount = getMoviePrice() * 0.10;\
+        \}\
+\
+        double total = getMoviePrice() - discount;\
+\
+        System.out.println("\\n----------------------------------");\
+        System.out.println("CUSTOMER: " + getCustomerName());\
+        System.out.println("MOVIE: " + getMovieTitle());\
+        System.out.println("COST: R" + getMoviePrice());\
+        System.out.println("DISCOUNT: R " + discount);\
+        System.out.println("TOTAL: R " + total);\
+        System.out.println("----------------------------------");\
+    \}\
+\}\
+\pard\pardeftab720\sa319\partightenfactor0
+
+\f0\b\fs24 \cf0 4. 
+\f3\fs26 Movie_Tickets.java
+\f0\fs24 \
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0 \cf0 Java\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 import java.util.Scanner;\
+\
+public class Movie_Tickets \{\
+    public static void main(String[] args) \{\
+        Scanner scanner = new Scanner(System.in);\
+\
+        System.out.print("Enter the customer name: ");\
+        String name = scanner.nextLine();\
+\
+        System.out.print("Enter the movie: ");\
+        String movie = scanner.nextLine();\
+\
+        System.out.print("Enter the customer age: ");\
+        int age = scanner.nextInt();\
+\
+        System.out.print("Enter the movie cost: ");\
+        double cost = scanner.nextDouble();\
+\
+        // Instantiate Subclass\
+        TicketSales sales = new TicketSales(name, movie, age, cost);\
+\
+        // Execute Report\
+        sales.print_tickets();\
+\
+        scanner.close();\
+    \}\
+\}\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 SECTION 3: UNIT TESTING TEMPLATE (JUnit 5)\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 Standard unit test structure for testing array calculations and OOP outputs:\
+\pard\pardeftab720\partightenfactor0
+\cf0 Java\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 import static org.junit.jupiter.api.Assertions.*;\
+import org.junit.jupiter.api.Test;\
+\
+public class ProductSalesTest \{\
+\
+    int[][] testData = \{\
+        \{300, 700, 150\},\
+        \{600, 250, 200\}\
+    \};\
+\
+    @Test\
+    public void CalculateTotalSales_ReturnsTotalSales() \{\
+        ProductSales sales = new ProductSales();\
+        int expected = 2200;\
+        int actual = sales.TotalSales(testData);\
+        assertEquals(expected, actual);\
+    \}\
+\
+    @Test\
+    public void AverageSales_ReturnsAverageProductSales() \{\
+        ProductSales sales = new ProductSales();\
+        double expected = 366.6666666666667;\
+        double actual = sales.AverageSales(testData);\
+        assertEquals(expected, actual, 0.001); // 0.001 delta for floating point precision\
+    \}\
+\
+\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 SECTION 1: ARRAY BASICS & 2D ARRAYS\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\fs28 \cf0 1. 1D Array Declaration & Initialization\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0\fs24 \cf0 Java\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 // Option A: Specific size (default values are 0 for numbers, null for objects)\
+int[] numbers = new int[5];\
+\
+// Option B: Direct initialization\
+int[] scores = \{85, 92, 78, 90, 88\};\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 2. 2D Array Traversal (Standard Exam Pattern)\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 In exam questions (like Question 1), rows usually represent categories/years and columns represent periods/quarters:\
+\pard\pardeftab720\partightenfactor0
+\cf0 Java\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 int[][] quarterlySales = \{\
+    \{300, 700, 150\}, // Row 0: Year 1\
+    \{600, 250, 200\}  // Row 1: Year 2\
+\};\
+\
+// Nested loop to traverse all elements:\
+for (int row = 0; row < quarterlySales.length; row++) \{\
+    for (int col = 0; col < quarterlySales[row].length; col++) \{\
+        System.out.println("Value at [" + row + "][" + col + "]: " + quarterlySales[row][col]);\
+    \}\
+\}\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 SECTION 2: COMMON ARRAY ALGORITHMS\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\fs28 \cf0 1. Calculating Total, Average, Max, and Min\
+\pard\pardeftab720\partightenfactor0
+
+\f1\b0\fs24 \cf0 Java\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 int total = 0;\
+int count = 0;\
+int max = numbers[0]; // Always initialize max/min with the FIRST element\
+int min = numbers[0];\
+\
+for (int num : numbers) \{\
+    total += num;\
+    count++;\
+    \
+    if (num > max) \{\
+        max = num;\
+    \}\
+    if (num < min) \{\
+        min = num;\
+    \}\
+\}\
+\
+// Cast to double to avoid integer division truncation!\
+double average = (double) total / count; \
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 2. Linear Search\
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f1\b0\fs24 \cf0 Locating an element in an array and returning its index:\
+\pard\pardeftab720\partightenfactor0
+\cf0 Java\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 public int searchElement(int[] arr, int target) \{\
+    for (int i = 0; i < arr.length; i++) \{\
+        if (arr[i] == target) \{\
+            return i; // Found target, return index\
+        \}\
+    \}\
+    return -1; // Target not found\
+\}\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 SECTION 3: SORTING ALGORITHMS\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\fs28 \cf0 1. Bubble Sort (Ascending Order)\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls3\ilvl0
+\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 How it works:
+\f1\b0  Repeatedly steps through the list, compares adjacent elements, and swaps them if they are in the wrong order. Larger elements "bubble up" to the end of the array.\
+\ls3\ilvl0
+\f0\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Time Complexity:
+\f1\b0  O(n2)\
+\pard\pardeftab720\partightenfactor0
+\cf0 \strokec2 Java\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 public class BubbleSortExample \{\
+\
+    public static void bubbleSort(int[] arr) \{\
+        int n = arr.length;\
+        \
+        // Outer loop for total passes\
+        for (int i = 0; i < n - 1; i++) \{\
+            // Inner loop for adjacent comparisons\
+            for (int j = 0; j < n - 1 - i; j++) \{\
+                if (arr[j] > arr[j + 1]) \{ // Change > to < for descending order\
+                    // Swap elements using a temporary variable\
+                    int temp = arr[j];\
+                    arr[j] = arr[j + 1];\
+                    arr[j + 1] = temp;\
+                \}\
+            \}\
+        \}\
+    \}\
+\
+    public static void main(String[] args) \{\
+        int[] data = \{64, 34, 25, 12, 22, 11, 90\};\
+        bubbleSort(data);\
+        \
+        System.out.print("Sorted Array (Bubble Sort): ");\
+        for (int num : data) \{\
+            System.out.print(num + " ");\
+        \}\
+    \}\
+\}\
+\pard\pardeftab720\sa280\partightenfactor0
+
+\f0\b\fs28 \cf0 2. Insertion Sort (Ascending Order)\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls4\ilvl0
+\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 How it works:
+\f1\b0  Builds the final sorted array one item at a time. It takes an element from the unsorted portion and shifts elements in the sorted portion to insert it into its correct position.\
+\ls4\ilvl0
+\f0\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Time Complexity:
+\f1\b0  O(n2) (Faster than Bubble Sort on small or partially sorted datasets).\
+\pard\pardeftab720\partightenfactor0
+\cf0 \strokec2 Java\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs26 \cf0 public class InsertionSortExample \{\
+\
+    public static void insertionSort(int[] arr) \{\
+        int n = arr.length;\
+\
+        // Start from index 1 (assume index 0 is already sorted)\
+        for (int i = 1; i < n; i++) \{\
+            int key = arr[i]; // Element to insert into sorted portion\
+            int j = i - 1;\
+\
+            // Shift elements of arr[0..i-1] that are greater than key\
+            // to one position ahead of their current position\
+            while (j >= 0 && arr[j] > key) \{ // Change > to < for descending order\
+                arr[j + 1] = arr[j];\
+                j = j - 1;\
+            \}\
+            arr[j + 1] = key; // Place key in its correct location\
+        \}\
+    \}\
+\
+    public static void main(String[] args) \{\
+        int[] data = \{12, 11, 13, 5, 6\};\
+        insertionSort(data);\
+\
+        System.out.print("Sorted Array (Insertion Sort): ");\
+        for (int num : data) \{\
+            System.out.print(num + " ");\
+        \}\
+    \}\
+\}\
+\pard\pardeftab720\sa298\partightenfactor0
+
+\f0\b\fs36 \cf0 SECTION 4: EXAM QUICK-REF SUMMARY\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sa240\partightenfactor0
+\ls5\ilvl0
+\fs24 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Index Out Of Bounds Exception:
+\f1\b0  Occurs if you try to access 
+\f2\fs26 arr[arr.length]
+\f1\fs24 . Always loop up to 
+\f2\fs26 i < arr.length
+\f1\fs24  (strictly less than).\
+\ls5\ilvl0
+\f0\b \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 Array Swapping Logic:
+\f1\b0 \uc0\u8232 Java\u8232 \u8232 
+\f2\fs26 int temp = arr[a];\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls5\ilvl0\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 arr[a] = arr[b];\
+\ls5\ilvl0\kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 arr[b] = temp;\uc0\u8232 
+\f1\fs24 \uc0\u8232 \u8232 \
+}
